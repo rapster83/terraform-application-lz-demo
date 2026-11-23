@@ -1,18 +1,18 @@
 landing_zone = {
-  name            = "meter-readings-api"
-  subscription_id = "70f0d042-bb3d-490b-8498-964903cd415a"
-  location        = "swedencentral"
-  tags = {
-    env = "dev"
-    app = "meter-readings-api"
-    tso = "me"
+  location = "swedencentral"
+  name     = "meter-readings"
+  private_dns_zone_ids = {
+    "privatelink.blob.core.windows.net" = "/subscriptions/70f0d042-bb3d-490b-8498-964903cd415a/resourceGroups/rg-ddc-connectivity/providers/Microsoft.Network/privateDnsZones/privatelink.blob.core.windows.net"
   }
-  vnet_id = "/subscriptions/70f0d042-bb3d-490b-8498-964903cd415a/resourceGroups/rg-ddc-tfstate/providers/Microsoft.Network/virtualNetworks/vnet-example"
-  subnet_ids = [
-    "/subscriptions/70f0d042-bb3d-490b-8498-964903cd415a/resourceGroups/rg-ddc-meter-readings-network/providers/Microsoft.Network/virtualNetworks/vnet-ddc-meter-readings/subnets/apps",
-    "/subscriptions/70f0d042-bb3d-490b-8498-964903cd415a/resourceGroups/rg-ddc-meter-readings-network/providers/Microsoft.Network/virtualNetworks/vnet-ddc-meter-readings/subnets/private-endpoints"
-  ]
-  private_dns_zone_ids = [
-    "/subscriptions/70f0d042-bb3d-490b-8498-964903cd415a/resourceGroups/rg-ddc-tfstate/providers/Microsoft.Network/privateDnsZones/privatednszone1"
-  ]
+  subnet_ids = {
+    apps              = "/subscriptions/70f0d042-bb3d-490b-8498-964903cd415a/resourceGroups/rg-ddc-meter-readings-network/providers/Microsoft.Network/virtualNetworks/vnet-ddc-meter-readings/subnets/apps",
+    private-endpoints = "/subscriptions/70f0d042-bb3d-490b-8498-964903cd415a/resourceGroups/rg-ddc-meter-readings-network/providers/Microsoft.Network/virtualNetworks/vnet-ddc-meter-readings/subnets/private-endpoints"
+  }
+  subscription_id = "70f0d042-bb3d-490b-8498-964903cd415a"
+  tags = {
+    cost-center = "cc-4711",
+    env         = "prod",
+    owner       = "meter-team"
+  }
+  vnet_id = "/subscriptions/70f0d042-bb3d-490b-8498-964903cd415a/resourceGroups/rg-ddc-meter-readings-network/providers/Microsoft.Network/virtualNetworks/vnet-ddc-meter-readings"
 }

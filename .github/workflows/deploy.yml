@@ -14,7 +14,7 @@ on:
 
 jobs:
   app:
-    uses: rapster83/terraform-platform-lz-demo/.github/workflows/app-dotnet.yml@v1
+    uses: rapster83/terraform-platform-lz-demo/.github/workflows/app-dotnet.yml@v0.0.1
     with:
       app-name: meter-readings-api
       destroy: ${{ inputs.destroy == true }}

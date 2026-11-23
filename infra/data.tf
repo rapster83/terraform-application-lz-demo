@@ -1,0 +1,1 @@
+data "azurerm_client_config" "current" {} # the deploy identity the platform created
